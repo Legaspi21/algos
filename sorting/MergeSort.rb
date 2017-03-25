@@ -1,4 +1,4 @@
-#Merge sort implementation for two sorted lists 
+#Recursive Merge sort implementation for two sorted lists 
 
 def merge_sort(l, r, a=[])
   # When both lists are empty return the merged array
