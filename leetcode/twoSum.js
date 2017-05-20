@@ -8,6 +8,8 @@
 // Because nums[0] + nums[1] = 2 + 7 = 9,
 // return [0, 1]
 
+// Brute Force
+// Complexity O(n^2)
 var twoSum = function(nums, target) {
   var result = [];
   for(var i = 0; i < nums.length; i++){
@@ -16,6 +18,22 @@ var twoSum = function(nums, target) {
         result.push(i,j);
         return result;
       }
+    }
+  }
+  return 0;
+};
+
+// Using Hash with 1 iteration
+// Complexity O(n)
+var twoSum = function(nums, target) {
+  var numsHash = {};
+  var result = [];
+  for(var i = 0; i < nums.length; i++){
+    var compliment = target - nums[i];
+    numsHash[nums[i]] = i;
+    if(numsHash.hasOwnProperty(compliment)){
+      result.push(numsHash[compliment], i)
+      return result;
     }
   }
   return 0;
